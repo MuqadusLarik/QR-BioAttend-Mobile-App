@@ -13,6 +13,13 @@
         android:theme="@style/Theme.AttendenceSystemUser"
         tools:targetApi="31">
         <activity
+            android:name=".TeachersScreen"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".admin.RegisterTeacher"
             android:exported="false">
             <meta-data

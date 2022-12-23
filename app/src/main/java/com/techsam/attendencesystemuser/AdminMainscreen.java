@@ -29,4 +29,8 @@ public class AdminMainscreen extends AppCompatActivity {
     public void teacherregistration(View view) {
         startActivity(new Intent(AdminMainscreen.this,RegisterTeacher.class));
     }
+
+    public void openteachers(View view) {
+        startActivity(new Intent(AdminMainscreen.this,TeachersScreen.class));
+    }
 }

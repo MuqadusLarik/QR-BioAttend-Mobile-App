@@ -110,6 +110,7 @@
             app:cardCornerRadius="10dp"
             android:clickable="true"
             android:focusable="true"
+            android:onClick="openteachers"
             android:layout_marginStart="10dp"
             app:cardBackgroundColor="#FF9800"
             android:layout_height="150dp" >
