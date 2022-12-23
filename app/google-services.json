@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "936638851619",
+    "firebase_url": "https://attendece-658e3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "attendece-658e3",
+    "storage_bucket": "attendece-658e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936638851619:android:d810e6fbc38781b6e81f96",
+        "android_client_info": {
+          "package_name": "com.techsam.attendencesystemuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936638851619-5pdact68jkunpour26can27889dhbka4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsvH2-_haYFw7NSyLu3rS-Bn7ARz34vK4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936638851619-5pdact68jkunpour26can27889dhbka4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
