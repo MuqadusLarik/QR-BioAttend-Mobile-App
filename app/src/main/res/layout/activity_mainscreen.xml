@@ -26,13 +26,18 @@
             android:onClick="openbatches"
             android:focusable="true"
             android:layout_marginStart="10dp"
-            app:cardBackgroundColor="#FF9800"
+            app:cardBackgroundColor="@color/mycolor"
             android:layout_height="150dp" >
             <LinearLayout
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/student"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -40,11 +45,6 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:text="Batches"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    app:tint="@color/white"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_how_to_reg_24"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.card.MaterialCardView
@@ -54,13 +54,17 @@
             android:onClick="openstudentscreen"
             android:focusable="true"
             android:layout_marginStart="10dp"
-            app:cardBackgroundColor="#FF9800"
+            app:cardBackgroundColor="@color/mycolor"
             android:layout_height="150dp" >
             <LinearLayout
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/student"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -68,11 +72,6 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:text="Students"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    app:tint="@color/white"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_how_to_reg_24"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
@@ -90,13 +89,17 @@
             android:focusable="true"
             android:onClick="opensubjects"
             android:layout_marginStart="10dp"
-            app:cardBackgroundColor="#FF9800"
+            app:cardBackgroundColor="@color/mycolor"
             android:layout_height="150dp" >
             <LinearLayout
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/student"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -104,11 +107,6 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:text="Subjects"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    app:tint="@color/white"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_how_to_reg_24"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.card.MaterialCardView
@@ -118,13 +116,17 @@
             android:focusable="true"
             android:onClick="openteachers"
             android:layout_marginStart="10dp"
-            app:cardBackgroundColor="#FF9800"
+            app:cardBackgroundColor="@color/mycolor"
             android:layout_height="150dp" >
             <LinearLayout
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/student"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -132,11 +134,6 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:text="Teachers"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    app:tint="@color/white"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_how_to_reg_24"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
