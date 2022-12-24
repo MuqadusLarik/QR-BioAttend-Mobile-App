@@ -1,4 +1,4 @@
-package com.techsam.attendencesystemuser;
+package com.techsam.attendencesystemuser.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.techsam.attendencesystemuser.R;
+import com.techsam.attendencesystemuser.models.Student;
 
 import java.util.ArrayList;
 

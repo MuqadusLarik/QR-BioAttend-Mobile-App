@@ -6,9 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.techsam.attendencesystemuser.admin.RegisterStudent;
-import com.techsam.attendencesystemuser.admin.RegisterTeacher;
-
 public class AdminMainscreen extends AppCompatActivity {
 
     @Override
@@ -17,20 +14,20 @@ public class AdminMainscreen extends AppCompatActivity {
         setContentView(R.layout.activity_mainscreen);
     }
 
-    public void registerstudents(View view) {
-        startActivity(new Intent(AdminMainscreen.this, RegisterStudent.class));
-
-    }
 
     public void openstudentscreen(View view) {
-        startActivity(new Intent(AdminMainscreen.this,StudentScreen.class));
-    }
-
-    public void teacherregistration(View view) {
-        startActivity(new Intent(AdminMainscreen.this,RegisterTeacher.class));
+        startActivity(new Intent(AdminMainscreen.this, Students.class));
     }
 
     public void openteachers(View view) {
-        startActivity(new Intent(AdminMainscreen.this,TeachersScreen.class));
+        startActivity(new Intent(AdminMainscreen.this, Teachers.class));
+    }
+
+    public void openbatches(View view) {
+        startActivity(new Intent(AdminMainscreen.this,Batches.class));
+    }
+
+    public void opensubjects(View view) {
+        startActivity(new Intent(AdminMainscreen.this,Subjects.class));
     }
 }

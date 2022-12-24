@@ -16,6 +16,8 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.techsam.attendencesystemuser.models.Student;
+import com.techsam.attendencesystemuser.models.Teacher;
 
 public class MainActivity extends AppCompatActivity {
     EditText username, password;
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     for(DataSnapshot snap:task.getResult().getChildren()){
                         Student student = snap.getValue(Student.class);
-                        if(student.getUsername().equals(user)&&student.getPassword().equals(pass)){
+                        if(student.getUser().equals(user)&&student.getPass().equals(pass)){
                             isuser = true;
                         }
                     }
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     for (DataSnapshot snap : task.getResult().getChildren()) {
                         Teacher teacher = snap.getValue(Teacher.class);
-                        if (teacher.getUsername().equals(user) && teacher.getPassword().equals(pass)) {
+                        if (teacher.getUser().equals(user) && teacher.getPass().equals(pass)) {
                             isTeacher = true;
                         }
                     }

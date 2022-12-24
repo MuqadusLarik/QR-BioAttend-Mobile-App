@@ -13,7 +13,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.techsam.attendencesystemuser.R;
-import com.techsam.attendencesystemuser.Student;
+import com.techsam.attendencesystemuser.models.Student;
 
 public class RegisterStudent extends AppCompatActivity {
     EditText editText,editText2,editText3,editText4;
@@ -37,9 +37,6 @@ public class RegisterStudent extends AppCompatActivity {
 
         Student student = new Student();
         student.setName(name);
-        student.setSurname(surname);
-        student.setUsername(rollNo);
-        student.setPassword(cnic);
 
         DatabaseReference db;
         db = FirebaseDatabase.getInstance().getReference();

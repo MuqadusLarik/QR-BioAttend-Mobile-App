@@ -13,8 +13,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.techsam.attendencesystemuser.R;
-import com.techsam.attendencesystemuser.Student;
-import com.techsam.attendencesystemuser.Teacher;
+import com.techsam.attendencesystemuser.models.Teacher;
 
 public class RegisterTeacher extends AppCompatActivity {
 
@@ -39,8 +38,8 @@ public class RegisterTeacher extends AppCompatActivity {
         db= FirebaseDatabase.getInstance().getReference();
         Teacher teacher = new Teacher();
         teacher.setName(name);
-        teacher.setUsername(username);
-        teacher.setPassword(password);
+        teacher.setUser(username);
+        teacher.setPass(password);
 
 
         db.child("Teachers").push().setValue(teacher).addOnCompleteListener(new OnCompleteListener<Void>() {
