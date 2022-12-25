@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.techsam.attendencesystemuser.R;
-import com.techsam.attendencesystemuser.models.Teacher;
+import com.techsam.attendencesystemuser.objects.Teacher;
 
 import java.util.ArrayList;
 
@@ -26,7 +26,7 @@ public class TeacherRecyclerAdapter extends RecyclerView.Adapter<TeacherRecycler
     @NonNull
     @Override
     public TeacherRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.designteacherlist,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.designteacher,parent,false);
         return new ViewHolder(view);
     }
 
@@ -41,7 +41,7 @@ public class TeacherRecyclerAdapter extends RecyclerView.Adapter<TeacherRecycler
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name,studentRollNo;
+        TextView name;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.teachername);

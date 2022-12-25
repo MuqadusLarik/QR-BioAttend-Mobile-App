@@ -6,6 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.techsam.attendencesystemuser.Screens.Batches;
+import com.techsam.attendencesystemuser.Screens.Students;
+import com.techsam.attendencesystemuser.Screens.Subjects;
+import com.techsam.attendencesystemuser.Screens.Teachers;
+
 public class AdminMainscreen extends AppCompatActivity {
 
     @Override
@@ -24,10 +29,10 @@ public class AdminMainscreen extends AppCompatActivity {
     }
 
     public void openbatches(View view) {
-        startActivity(new Intent(AdminMainscreen.this,Batches.class));
+        startActivity(new Intent(AdminMainscreen.this, Batches.class));
     }
 
     public void opensubjects(View view) {
-        startActivity(new Intent(AdminMainscreen.this,Subjects.class));
+        startActivity(new Intent(AdminMainscreen.this, Subjects.class));
     }
 }

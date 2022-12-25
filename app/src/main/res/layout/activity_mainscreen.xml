@@ -16,7 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_height="wrap_content">
         <com.google.android.material.card.MaterialCardView
@@ -37,7 +37,7 @@
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/student"/>
+                    android:src="@drawable/batch"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -64,11 +64,10 @@
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/student"/>
+                    android:src="@drawable/students"/>
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_height="wrap_content"                   android:gravity="center"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:text="Students"/>
@@ -80,7 +79,7 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content">
         <com.google.android.material.card.MaterialCardView
             android:layout_width="150dp"
@@ -99,7 +98,7 @@
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/student"/>
+                    android:src="@drawable/subject"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -126,7 +125,7 @@
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/student"/>
+                    android:src="@drawable/teachers"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -17,15 +17,16 @@
             android:layout_height="50dp"
             android:id="@+id/img_std_design"
             app:layout_constraintStart_toStartOf="parent"
-            android:src="@drawable/ic_baseline_account_circle_24"
+            android:src="@drawable/subject"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="username"
+            android:text="Subject Name"
             android:textSize="20dp"
-            android:id="@+id/studentname"
+            android:layout_marginHorizontal="5dp"
+            android:id="@+id/subjectname"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@id/img_std_design"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -33,10 +34,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="roll"
-            android:id="@+id/studentroll"
+            android:text="subject code"
+            android:id="@+id/subjectcode"
             android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/studentname"
+            android:layout_marginHorizontal="5dp"
+            app:layout_constraintTop_toBottomOf="@id/subjectname"
             app:layout_constraintStart_toEndOf="@id/img_std_design"
             />
 

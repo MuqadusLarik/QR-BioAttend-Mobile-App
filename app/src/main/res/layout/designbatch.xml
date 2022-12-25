@@ -15,29 +15,31 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:id="@+id/img_teacher_design"
+            android:id="@+id/img_std_design"
             app:layout_constraintStart_toStartOf="parent"
-            android:src="@drawable/ic_baseline_account_circle_24"
+            android:src="@drawable/batch"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="username"
+            android:text="Batch Title"
             android:textSize="20dp"
-            android:id="@+id/teachername"
+            android:id="@+id/batch"
+            android:layout_marginHorizontal="5dp"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/img_teacher_design"
+            app:layout_constraintStart_toEndOf="@id/img_std_design"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="roll"
-            android:id="@+id/teacherroll"
+            android:text="Start Year"
+            android:id="@+id/startyear"
+            android:layout_marginHorizontal="5dp"
             android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/teachername"
-            app:layout_constraintStart_toEndOf="@id/img_teacher_design"
+            app:layout_constraintTop_toBottomOf="@id/batch"
+            app:layout_constraintStart_toEndOf="@id/img_std_design"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

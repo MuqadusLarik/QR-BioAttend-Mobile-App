@@ -1,4 +1,4 @@
-package com.techsam.attendencesystemuser.models;
+package com.techsam.attendencesystemuser.objects;
 
 import java.util.ArrayList;
 

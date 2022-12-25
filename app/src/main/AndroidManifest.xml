@@ -13,21 +13,40 @@
         android:theme="@style/Theme.AttendenceSystemUser"
         tools:targetApi="31">
         <activity
-            android:name=".Subjects"
+            android:name=".admin.AddBatches"
+            android:label="ADD BATCH"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Batches"
+            android:name=".admin.AddSubjects"
+            android:label="ADD SUBJECT"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Teachers"
+            android:name=".Screens.Subjects"
+            android:label="SUBJECTS"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Screens.Batches"
+            android:label="BATCHES"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Screens.Teachers"
+            android:label="TEACHERS"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -35,6 +54,7 @@
         </activity>
         <activity
             android:name=".admin.RegisterTeacher"
+            android:label="ADD TEACHER"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -43,7 +63,7 @@
         <activity
             android:name=".StudentMainscreen"
             android:exported="false"
-            android:label="Student">
+            android:label="STUDENT PORTAL">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -51,13 +71,14 @@
         <activity
             android:name=".TeacherMainscreen"
             android:exported="false"
-            android:label="Teacher">
+            android:label="TEACHER PORTAL">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Students"
+            android:name=".Screens.Students"
+            android:label="STUDENTS"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -65,6 +86,7 @@
         </activity>
         <activity
             android:name=".admin.RegisterStudent"
+            android:label="REGISTER STUDENT"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -73,7 +95,7 @@
         <activity
             android:name=".AdminMainscreen"
             android:exported="false"
-            android:label="Admin">
+            android:label="ADMIN PORTAL">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -89,7 +111,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="Admin Login">
+            android:label="Biometric Attendance BS(CS) GDCL">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

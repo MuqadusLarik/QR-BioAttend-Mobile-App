@@ -1,12 +1,14 @@
-package com.techsam.attendencesystemuser.models;
+package com.techsam.attendencesystemuser.objects;
 
 public class Subject {
     private String subId;
     private String subName;
+    private String subCode;
 
-    public Subject(String subId, String subName) {
+    public Subject(String subId, String subName, String subCode) {
         this.subId = subId;
         this.subName = subName;
+        this.subCode =subCode;
     }
     public Subject() {
     }
@@ -24,7 +26,9 @@ public class Subject {
         return subName;
     }
 
-    public void setSubName(String subName) {
-        this.subName = subName;
-    }
+    public void setSubName(String subName) {this.subName = subName;}
+
+    public String getSubCode() {return subCode;}
+
+    public void setSubCode(String subCode) {this.subCode = subCode;}
 }

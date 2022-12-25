@@ -1,4 +1,4 @@
-package com.techsam.attendencesystemuser;
+package com.techsam.attendencesystemuser.Screens;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,40 +14,42 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.techsam.attendencesystemuser.adapters.TeacherRecyclerAdapter;
-import com.techsam.attendencesystemuser.admin.RegisterTeacher;
-import com.techsam.attendencesystemuser.models.Teacher;
+import com.techsam.attendencesystemuser.R;
+import com.techsam.attendencesystemuser.adapters.BatchRecyclerAdapter;
+import com.techsam.attendencesystemuser.admin.AddBatches;
+import com.techsam.attendencesystemuser.objects.Batch;
 
 import java.util.ArrayList;
 
-public class Teachers extends AppCompatActivity {
+public class Batches extends AppCompatActivity {
     RecyclerView recyclerView;
-    TeacherRecyclerAdapter adapter;
-    ArrayList<Teacher> list;
+    BatchRecyclerAdapter adapter;
+    ArrayList<Batch> list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teachers_screen);
-        recyclerView = findViewById(R.id.teacherrecycler);
+        setContentView(R.layout.activity_batches_screen);
+        recyclerView = findViewById(R.id.batchrecycler);
         list = new ArrayList<>();
 
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
-        db.child("Teachers").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        db.child("Batches").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
-                for(DataSnapshot snap:task.getResult().getChildren()){
-                    Teacher teacher = snap.getValue(Teacher.class);
-                    list.add(teacher);
+                for (DataSnapshot snap : task.getResult().getChildren()) {
+                    Batch batch = snap.getValue(Batch.class);
+                    list.add(batch);
                 }
-                adapter = new TeacherRecyclerAdapter(list, Teachers.this);
-                LinearLayoutManager llm = new LinearLayoutManager(Teachers.this,RecyclerView.VERTICAL,false);
+                adapter = new BatchRecyclerAdapter(list, Batches.this);
+                LinearLayoutManager llm = new LinearLayoutManager(Batches.this, RecyclerView.VERTICAL, false);
                 recyclerView.setLayoutManager(llm);
                 recyclerView.setAdapter(adapter);
             }
         });
     }
 
-    public void reg(View view) {
-        startActivity(new Intent(Teachers.this, RegisterTeacher.class));
+    public void addbatch(View view) {
+        startActivity(new Intent(Batches.this, AddBatches.class));
     }
 }

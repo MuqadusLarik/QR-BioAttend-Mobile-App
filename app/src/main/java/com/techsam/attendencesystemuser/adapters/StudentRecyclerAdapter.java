@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.techsam.attendencesystemuser.R;
-import com.techsam.attendencesystemuser.models.Student;
+import com.techsam.attendencesystemuser.objects.Student;
 
 import java.util.ArrayList;
 
@@ -26,7 +26,7 @@ public class StudentRecyclerAdapter extends RecyclerView.Adapter<StudentRecycler
     @NonNull
     @Override
     public StudentRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.designstudentlist,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.designstudent,parent,false);
         return new ViewHolder(view);
     }
 

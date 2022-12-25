@@ -16,8 +16,8 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.techsam.attendencesystemuser.models.Student;
-import com.techsam.attendencesystemuser.models.Teacher;
+import com.techsam.attendencesystemuser.objects.Student;
+import com.techsam.attendencesystemuser.objects.Teacher;
 
 public class MainActivity extends AppCompatActivity {
     EditText username, password;

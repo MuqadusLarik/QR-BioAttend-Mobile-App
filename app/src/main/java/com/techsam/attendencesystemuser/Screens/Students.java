@@ -1,4 +1,4 @@
-package com.techsam.attendencesystemuser;
+package com.techsam.attendencesystemuser.Screens;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,9 +14,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.techsam.attendencesystemuser.R;
 import com.techsam.attendencesystemuser.adapters.StudentRecyclerAdapter;
 import com.techsam.attendencesystemuser.admin.RegisterStudent;
-import com.techsam.attendencesystemuser.models.Student;
+import com.techsam.attendencesystemuser.objects.Student;
 
 import java.util.ArrayList;
 

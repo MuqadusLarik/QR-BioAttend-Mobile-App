@@ -4,22 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Screens.Students">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
+    tools:context=".Screens.Batches">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/studentrecycler"/>
-    </LinearLayout>
-    </ScrollView>
+        android:id="@+id/batchrecycler"/>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
@@ -27,9 +18,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/white"
-        android:onClick="reg"
+        android:onClick="addbatch"
         android:layout_margin="10dp"
-        android:src="@drawable/ic_baseline_group_add_24"
+        android:src="@drawable/ic_baseline_school_24"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

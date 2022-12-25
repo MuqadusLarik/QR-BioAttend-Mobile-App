@@ -13,7 +13,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.techsam.attendencesystemuser.R;
-import com.techsam.attendencesystemuser.models.Teacher;
+import com.techsam.attendencesystemuser.objects.Teacher;
 
 public class RegisterTeacher extends AppCompatActivity {
 
@@ -25,6 +25,8 @@ public class RegisterTeacher extends AppCompatActivity {
         editText = findViewById(R.id.teachername);
         editText2 = findViewById(R.id.teacherusername);
         editText3 = findViewById(R.id.teacherpassword);
+
+
     }
 
     public void submit(View view) {
@@ -34,18 +36,23 @@ public class RegisterTeacher extends AppCompatActivity {
         String password = editText3.getText().toString();
 
 
-        DatabaseReference db;
-        db= FirebaseDatabase.getInstance().getReference();
+
         Teacher teacher = new Teacher();
         teacher.setName(name);
         teacher.setUser(username);
         teacher.setPass(password);
 
+        DatabaseReference db;
+        db= FirebaseDatabase.getInstance().getReference();
+
 
         db.child("Teachers").push().setValue(teacher).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(RegisterTeacher.this, "teacher added", Toast.LENGTH_SHORT).show();
+                editText.setText("");
+                editText2.setText("");
+                editText3.setText("");
+                Toast.makeText(RegisterTeacher.this, "Teacher Added", Toast.LENGTH_SHORT).show();
             }
         });
 

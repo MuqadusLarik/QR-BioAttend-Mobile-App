@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Screens.Students">
+    tools:context=".Screens.Subjects">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -17,7 +17,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/studentrecycler"/>
+        android:id="@+id/subjectsrecycler"/>
     </LinearLayout>
     </ScrollView>
 
@@ -27,9 +27,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/white"
-        android:onClick="reg"
+        android:onClick="addsubject"
         android:layout_margin="10dp"
-        android:src="@drawable/ic_baseline_group_add_24"
-        />
+        android:src="@drawable/ic_baseline_menu_book_24"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
