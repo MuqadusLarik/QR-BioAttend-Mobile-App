@@ -33,12 +33,15 @@ public class AddSubjects extends AppCompatActivity {
 
         DatabaseReference db;
         db= FirebaseDatabase.getInstance().getReference();
+        String id = db.child("Subjects").push().getKey();
 
         Subject subject =new Subject();
         subject.setSubName(subname);
         subject.setSubCode(subcode);
+        subject.setSubId(id);
 
-        db.child("Subjects").push().setValue(subject).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+        db.child("Subjects").child(id).setValue(subject).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 SubName.setText("");
@@ -46,5 +49,6 @@ public class AddSubjects extends AppCompatActivity {
                 Toast.makeText(AddSubjects.this, "Subject added", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

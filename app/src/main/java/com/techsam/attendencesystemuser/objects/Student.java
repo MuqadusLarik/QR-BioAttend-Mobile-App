@@ -6,7 +6,6 @@ public class Student {
     private String id;
     private String name;
     private String batch;
-    private String semester;
     private String rollNo;
     private String user;
     private String pass;
@@ -17,11 +16,10 @@ public class Student {
 
     }
 
-    public Student(String id, String name, String batch, String semester, String rollNo, String user, String pass, ArrayList<Subject> list) {
+    public Student(String id, String name, String batch, String rollNo, String user, String pass, ArrayList<Subject> list) {
         this.id = id;
         this.name = name;
         this.batch = batch;
-        this.semester = semester;
         this.rollNo = rollNo;
         this.user = user;
         this.pass = pass;
@@ -50,14 +48,6 @@ public class Student {
 
     public void setBatch(String batch) {
         this.batch = batch;
-    }
-
-    public String getSemester() {
-        return semester;
-    }
-
-    public void setSemester(String semester) {
-        this.semester = semester;
     }
 
     public String getRollNo() {

@@ -93,7 +93,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".AdminMainscreen"
+            android:name=".MainActivity"
             android:exported="false"
             android:label="ADMIN PORTAL">
             <meta-data
@@ -109,7 +109,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".AdminMainscreen"
             android:exported="true"
             android:label="Biometric Attendance BS(CS) GDCL">
             <intent-filter>

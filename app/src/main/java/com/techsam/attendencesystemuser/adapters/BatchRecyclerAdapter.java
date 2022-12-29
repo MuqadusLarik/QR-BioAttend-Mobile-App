@@ -34,7 +34,6 @@ public class BatchRecyclerAdapter extends RecyclerView.Adapter<BatchRecyclerAdap
     public void onBindViewHolder(@NonNull BatchRecyclerAdapter.ViewHolder holder, int position) {
         holder.batchTitle.setText(list.get(position).getBatchTitle());
         holder.startYear.setText(list.get(position).getStartYear());
-        holder.endYear.setText(list.get(position).getEndYear());
     }
 
     @Override
@@ -46,9 +45,8 @@ public class BatchRecyclerAdapter extends RecyclerView.Adapter<BatchRecyclerAdap
         TextView batchTitle,startYear,endYear;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            batchTitle = itemView.findViewById(R.id.batchtitle);
+            batchTitle = itemView.findViewById(R.id.batch);
             startYear = itemView.findViewById(R.id.startyear);
-            endYear = itemView.findViewById(R.id.endyear);
 
 
         }

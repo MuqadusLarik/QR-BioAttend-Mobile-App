@@ -34,18 +34,18 @@ public class Subjects extends AppCompatActivity {
         list = new ArrayList<>();
 
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
-        db.child("Subjects").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                for(DataSnapshot snap:task.getResult().getChildren()){
-                    Subject subject = snap.getValue(Subject.class);
-                    list.add(subject);
+        db.child("Subjects").get().addOnCompleteListener(task -> {
+            for(DataSnapshot snap:task.getResult().getChildren()){
+                if(snap.exists()){
+                        Subject subject = snap.getValue(Subject.class);
+                        list.add(subject);
+
                 }
-                adapter = new SubjectRecyclerAdapter(list, Subjects.this);
-                LinearLayoutManager llm = new LinearLayoutManager(Subjects.this,RecyclerView.VERTICAL,false);
-                recyclerView.setLayoutManager(llm);
-                recyclerView.setAdapter(adapter);
             }
+            adapter = new SubjectRecyclerAdapter(list, Subjects.this);
+            LinearLayoutManager llm = new LinearLayoutManager(Subjects.this,RecyclerView.VERTICAL,false);
+            recyclerView.setLayoutManager(llm);
+            recyclerView.setAdapter(adapter);
         });
     }
 

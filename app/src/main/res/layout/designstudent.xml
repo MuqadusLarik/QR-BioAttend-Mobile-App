@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:id="@+id/img_std_design"
             app:layout_constraintStart_toStartOf="parent"
             android:src="@drawable/studentt"
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Student Name"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:id="@+id/studentname"
             android:layout_marginHorizontal="5dp"
             android:textColor="@color/black"

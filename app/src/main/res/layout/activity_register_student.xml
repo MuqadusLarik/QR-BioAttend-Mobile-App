@@ -6,8 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".admin.RegisterStudent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
+
+        <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
@@ -23,15 +31,6 @@
         android:layout_marginHorizontal="10dp"
         android:hint="Enter Batch"
         />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:id="@+id/studentsemester"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Enter Semester"
-        />
-
 
     <EditText
         android:layout_width="match_parent"
@@ -59,13 +58,21 @@
         android:hint="Enter Password"
         />
 
+        <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/addstudentsubjectrecycler"/>
+
+
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:onClick="submit"
-
         android:text="Submit"/>
 
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

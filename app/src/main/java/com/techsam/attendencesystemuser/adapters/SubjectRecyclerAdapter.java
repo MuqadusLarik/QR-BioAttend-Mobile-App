@@ -46,8 +46,8 @@ public class SubjectRecyclerAdapter extends RecyclerView.Adapter<SubjectRecycler
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            subName = itemView.findViewById(R.id.subname);
-            subCode=itemView.findViewById(R.id.subcode);
+            subName = itemView.findViewById(R.id.subjectname);
+            subCode=itemView.findViewById(R.id.subjectcode);
         }
     }
 }
