@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".admin.RegisterTeacher">
-   <!-- <ScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">-->
+            android:orientation="vertical">
 
 
         <EditText
@@ -41,30 +41,14 @@
         android:layout_marginHorizontal="10dp"
         android:hint="Enter Password"
         />
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
-
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:id="@+id/addsubjectrecycler" />
-                </LinearLayout>
-            </ScrollView>
-
-            <Button
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:onClick="submit"
         android:text="Submit"/>
 
-    <!--    </LinearLayout>
+        </LinearLayout>
     </ScrollView>
--->
+
 </LinearLayout>

@@ -35,6 +35,7 @@ public class AddSubjects extends AppCompatActivity {
         db= FirebaseDatabase.getInstance().getReference();
         String id = db.child("Subjects").push().getKey();
 
+        String id = db.child("Subjects").push().getKey();
         Subject subject =new Subject();
         subject.setSubName(subname);
         subject.setSubCode(subcode);
