@@ -82,6 +82,7 @@ public class RegisterStudent extends AppCompatActivity {
         student.setUser(username);
         student.setPass(password);
         student.setList(checkBoxList);
+        student.setId(id);
 
 
         db.child("Students").child(id).setValue(student).addOnCompleteListener(new OnCompleteListener<Void>() {

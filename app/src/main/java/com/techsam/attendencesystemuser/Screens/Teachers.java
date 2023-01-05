@@ -8,15 +8,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.techsam.attendencesystemuser.MainActivity;
 import com.techsam.attendencesystemuser.R;
+import com.techsam.attendencesystemuser.adapters.SubjectRecyclerAdapter;
 import com.techsam.attendencesystemuser.adapters.TeacherRecyclerAdapter;
 import com.techsam.attendencesystemuser.admin.RegisterTeacher;
+import com.techsam.attendencesystemuser.objects.Subject;
 import com.techsam.attendencesystemuser.objects.Teacher;
 
 import java.util.ArrayList;
@@ -36,15 +40,21 @@ public class Teachers extends AppCompatActivity {
         db.child("Teachers").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
-                for(DataSnapshot snap:task.getResult().getChildren()){
+                for (DataSnapshot snap : task.getResult().getChildren()) {
                     Teacher teacher = snap.getValue(Teacher.class);
+//                    if(teacher.getUser().equals(MainActivity.pusername) && teacher.getPass().equals(MainActivity.pPassword)){
+//                        for(Subject subject:teacher.getList()){
+//                            Toast.makeText(Teachers.this, ""+subject.getSubName(), Toast.LENGTH_SHORT).show();
+//                        }
                     list.add(teacher);
                 }
-                adapter = new TeacherRecyclerAdapter(list, Teachers.this);
+                adapter = new TeacherRecyclerAdapter(list,Teachers.this);
                 LinearLayoutManager llm = new LinearLayoutManager(Teachers.this,RecyclerView.VERTICAL,false);
                 recyclerView.setLayoutManager(llm);
                 recyclerView.setAdapter(adapter);
-            }
+
+                }
+
         });
     }
 

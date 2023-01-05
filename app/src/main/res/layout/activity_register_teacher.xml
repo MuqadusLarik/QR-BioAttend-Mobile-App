@@ -41,6 +41,13 @@
         android:layout_marginHorizontal="10dp"
         android:hint="Enter Password"
         />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:id="@+id/registerteacher_subject_recycler"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

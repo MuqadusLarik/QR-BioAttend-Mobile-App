@@ -17,6 +17,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:id="@+id/img_std_design"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:src="@drawable/studentt"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -30,7 +31,7 @@
             android:layout_marginHorizontal="5dp"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@id/img_std_design"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="@id/img_std_design"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,9 +40,38 @@
             android:layout_marginHorizontal="5dp"
             android:id="@+id/studentroll"
             android:textColor="@color/black"
+
             app:layout_constraintTop_toBottomOf="@id/studentname"
             app:layout_constraintStart_toEndOf="@id/img_std_design"
             />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal" >
+            <RadioButton
+                android:text="A"
+                android:button="@null"
+                android:id="@+id/radio_absent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableBottom="@android:drawable/btn_radio"
+                android:gravity="center"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:text="P"
+                android:button="@null"
+                android:layout_width="wrap_content"
+                android:id="@+id/radio_present"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:drawableBottom="@android:drawable/btn_radio"
+                android:gravity="center"
+                android:layout_weight="1"/>
+        </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

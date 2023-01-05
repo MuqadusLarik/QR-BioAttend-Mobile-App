@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     boolean isTeacher = false;
     ArrayAdapter<String> arrayAdapter;
     MaterialAutoCompleteTextView dropdown;
+    public static String pusername;
+    public static String pPassword;
+    public static String userKey;
+
 
     DatabaseReference db;
 
@@ -58,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         String user = username.getText().toString();
         String pass = password.getText().toString();
 
+        pusername = user;
+        pPassword = pass;
         String dropDownText = dropdown.getText().toString();
 
         if (dropDownText.equals("Admin") &&(user.equals("admin") && pass.equals("admin123")) ){
@@ -88,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
                         Teacher teacher = snap.getValue(Teacher.class);
                         if (teacher.getUser().equals(user) && teacher.getPass().equals(pass)) {
                             isTeacher = true;
+                            userKey = teacher.getId();
+                            break;
                         }
                     }
                     if (isTeacher) {

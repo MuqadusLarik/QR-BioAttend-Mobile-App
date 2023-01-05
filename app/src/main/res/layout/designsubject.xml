@@ -6,11 +6,14 @@
     android:layout_marginTop="10dp"
     app:cardElevation="4dp"
     app:cardCornerRadius="8dp"
+    android:clickable="true"
+    android:focusable="true"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:padding="10dp"
         android:layout_height="match_parent">
         <ImageView
             android:layout_width="40dp"

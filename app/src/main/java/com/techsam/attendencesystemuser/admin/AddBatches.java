@@ -38,6 +38,7 @@ public class AddBatches extends AppCompatActivity {
         Batch batch = new Batch();
         batch.setBatchTitle(batchtitle);
         batch.setStartYear(startYear);
+        batch.setBid(id);
 
 
         db.child("Batches").child(id).setValue(batch).addOnCompleteListener(new OnCompleteListener<Void>() {

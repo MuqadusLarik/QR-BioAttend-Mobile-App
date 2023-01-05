@@ -29,7 +29,7 @@ public class AddTeacherSubjectAdapter extends RecyclerView.Adapter<AddTeacherSub
     @NonNull
     @Override
     public AddTeacherSubjectAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.checkboxteacher,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.designaddsubjects,parent,false);
         return new ViewHolder(view);
     }
 

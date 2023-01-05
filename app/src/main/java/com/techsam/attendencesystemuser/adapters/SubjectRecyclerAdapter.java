@@ -1,6 +1,7 @@
 package com.techsam.attendencesystemuser.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.techsam.attendencesystemuser.Attendence;
 import com.techsam.attendencesystemuser.R;
 import com.techsam.attendencesystemuser.objects.Subject;
 
@@ -48,6 +50,15 @@ public class SubjectRecyclerAdapter extends RecyclerView.Adapter<SubjectRecycler
 
             subName = itemView.findViewById(R.id.subjectname);
             subCode=itemView.findViewById(R.id.subjectcode);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, Attendence.class);
+                    intent.putExtra("Subject",list.get(getAdapterPosition()).getSubName());
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

@@ -29,7 +29,7 @@ public class AddStudentSubjectAdapter extends RecyclerView.Adapter<AddStudentSub
     @NonNull
     @Override
     public AddStudentSubjectAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.checkboxstudent,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.designaddsubjects,parent,false);
         return new ViewHolder(view);
     }
 
@@ -52,7 +52,7 @@ public class AddStudentSubjectAdapter extends RecyclerView.Adapter<AddStudentSub
 
             subName = itemView.findViewById(R.id.subjectname);
             subCode=itemView.findViewById(R.id.subjectcode);
-            checkBox=itemView.findViewById(R.id.checkboxstudent);
+            checkBox=itemView.findViewById(R.id.checkboxteacher);
 
             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override

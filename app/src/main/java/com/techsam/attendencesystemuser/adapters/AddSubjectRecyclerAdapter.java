@@ -65,6 +65,7 @@ public class AddSubjectRecyclerAdapter extends RecyclerView.Adapter<AddSubjectRe
                     subject.setSubCode(list.get(pos).getSubCode());
                     subject.setSubName(list.get(pos).getSubName());
                     subject.setSubId(list.get(pos).getSubId());
+
                     RegisterTeacher.checkBoxList.add(subject);
 
 
