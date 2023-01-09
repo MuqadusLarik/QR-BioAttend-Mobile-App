@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/submit_attendence"
         android:layout_marginHorizontal="20dp"
+        android:onClick="submittofirebase"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="Submit"/>

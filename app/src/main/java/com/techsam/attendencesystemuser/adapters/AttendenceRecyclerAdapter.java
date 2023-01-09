@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.techsam.attendencesystemuser.Attendence;
 import com.techsam.attendencesystemuser.R;
 import com.techsam.attendencesystemuser.objects.PresentAbsent;
 import com.techsam.attendencesystemuser.objects.Student;
@@ -57,6 +58,31 @@ public class AttendenceRecyclerAdapter extends RecyclerView.Adapter<AttendenceRe
             studentRollNo = itemView.findViewById(R.id.studentroll);
             absent = itemView.findViewById(R.id.radio_absent);
             present = itemView.findViewById(R.id.radio_present);
+
+            absent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    PresentAbsent pa = new PresentAbsent();
+                    pa.setStudentId(list.get(pos).getStudentId());
+                    pa.setStudentName(list.get(pos).getStudentName());
+                    pa.setStatus("Absent");
+                    Attendence.list2.add(pa);
+                }
+            });
+            present.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    PresentAbsent pa = new PresentAbsent();
+                    pa.setStudentId(list.get(pos).getStudentId());
+                    pa.setStudentName(list.get(pos).getStudentName());
+                    pa.setStatus("Present");
+                    Attendence.list2.add(pa);
+                }
+            });
+
+
 
 
         }

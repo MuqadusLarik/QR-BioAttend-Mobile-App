@@ -20,6 +20,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.techsam.attendencesystemuser.adapters.AttendenceRecyclerAdapter;
+import com.techsam.attendencesystemuser.objects.AttendenceObj;
 import com.techsam.attendencesystemuser.objects.PresentAbsent;
 import com.techsam.attendencesystemuser.objects.Student;
 import com.techsam.attendencesystemuser.objects.Subject;
@@ -34,7 +35,7 @@ public class Attendence extends AppCompatActivity {
     Calendar myCalendar;
     AttendenceRecyclerAdapter adapter;
     RecyclerView recyclerView;
-    ArrayList<PresentAbsent> list,list2;
+    public static ArrayList<PresentAbsent> list,list2;
     DatabaseReference db;
     ProgressDialog pd;
 
@@ -55,7 +56,6 @@ public class Attendence extends AppCompatActivity {
         pd.setMessage("Please Wait");
         pd.show();
         subjectName = getIntent().getStringExtra("Subject");
-        Toast.makeText(this, subjectName, Toast.LENGTH_SHORT).show();
 
 
         DatePickerDialog.OnDateSetListener date = (datePicker, i, i1, i2) -> {
@@ -71,24 +71,23 @@ public class Attendence extends AppCompatActivity {
             }
         });
 
+
         db.child("Students").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 for (DataSnapshot snap : task.getResult().getChildren()) {
                     Student student = snap.getValue(Student.class);
 
-//                    for(Subject sub:student.getList()){
-//                        if (subjectName.equals(sub)) {
-//
-//                            PresentAbsent pA = new PresentAbsent();
-//                            pA.setStudentName(student.getName());
-//                            pA.setStudentId(student.getId());
-//                            list.add(pA);
-////                            break;
-//                        }
-//                    }
+                    for(Subject sub:student.getList()){
+                        if (subjectName.equals(sub.getSubName())) {
+                            PresentAbsent pA = new PresentAbsent();
+                            pA.setStudentName(student.getName());
+                            pA.setStudentId(student.getId());
+                            list.add(pA);
+                            break;
+                        }
+                    }
                 }
-
                 pd.dismiss();
 
                 adapter = new AttendenceRecyclerAdapter(list, Attendence.this);
@@ -106,5 +105,21 @@ public class Attendence extends AppCompatActivity {
         String myFormat = "dd-MM-yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(myFormat, Locale.ENGLISH);
         selectDate.setText(dateFormat.format(myCalendar.getTime()));
+    }
+
+    public void submittofirebase(View view) {
+        String key = db.child("Attendence").push().getKey();
+        AttendenceObj aObj = new AttendenceObj();
+        aObj.setDate(selectDate.getText().toString());
+        aObj.setList(list2);
+        aObj.setaId(key);
+        aObj.setSubName(subjectName);
+        db.child("Attendence").child(key).setValue(aObj).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(Attendence.this, "Attendece Submitted", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

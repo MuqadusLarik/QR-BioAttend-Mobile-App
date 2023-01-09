@@ -67,7 +67,6 @@
                 android:layout_width="wrap_content"
                 android:id="@+id/radio_present"
                 android:layout_height="wrap_content"
-                android:checked="true"
                 android:drawableBottom="@android:drawable/btn_radio"
                 android:gravity="center"
                 android:layout_weight="1"/>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class AttendenceObj {
     private String subName;
+    private String aId;
     private String subId;
     private String teacherName;
     private String teacherId;
@@ -14,8 +15,9 @@ public class AttendenceObj {
 
     }
 
-    public AttendenceObj(String subName, String subId, String teacherName, String teacherId, String date, ArrayList<PresentAbsent> list) {
+    public AttendenceObj(String subName, String aId, String subId, String teacherName, String teacherId, String date, ArrayList<PresentAbsent> list) {
         this.subName = subName;
+        this.aId = aId;
         this.subId = subId;
         this.teacherName = teacherName;
         this.teacherId = teacherId;
@@ -29,6 +31,14 @@ public class AttendenceObj {
 
     public void setSubName(String subName) {
         this.subName = subName;
+    }
+
+    public String getaId() {
+        return aId;
+    }
+
+    public void setaId(String aId) {
+        this.aId = aId;
     }
 
     public String getSubId() {
