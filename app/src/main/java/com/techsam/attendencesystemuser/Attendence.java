@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -120,6 +121,14 @@ public class Attendence extends AppCompatActivity {
                 Toast.makeText(Attendence.this, "Attendece Submitted", Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+
+    public void generateqrcode(View view) {
+        Intent intent = new Intent(Attendence.this,QrGenerate.class);
+        intent.putExtra("DATE",selectDate.getText());
+        intent.putExtra("SUBJECT",subjectName);
+        startActivity(intent);
 
     }
 }

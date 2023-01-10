@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                         Student student = snap.getValue(Student.class);
                         if(student.getUser().equals(user)&&student.getPass().equals(pass)){
                             isuser = true;
+                            userKey = student.getId();
                         }
                     }
                     if(isuser){

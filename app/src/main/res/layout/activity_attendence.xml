@@ -7,12 +7,26 @@
     tools:context=".Attendence">
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/selectdate"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/qr"
         android:text="Select date"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/qr"
+        android:onClick="generateqrcode"
+        app:layout_constraintTop_toTopOf="@id/selectdate"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/selectdate"
+        android:src="@drawable/ic_baseline_qr_code_scanner_24"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
