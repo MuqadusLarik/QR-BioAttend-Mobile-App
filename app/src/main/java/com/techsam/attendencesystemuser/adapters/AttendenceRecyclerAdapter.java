@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.techsam.attendencesystemuser.Attendence;
+import com.techsam.attendencesystemuser.AttendenceFragment;
 import com.techsam.attendencesystemuser.R;
 import com.techsam.attendencesystemuser.objects.PresentAbsent;
 import com.techsam.attendencesystemuser.objects.Student;
@@ -37,11 +38,13 @@ public class AttendenceRecyclerAdapter extends RecyclerView.Adapter<AttendenceRe
     public void onBindViewHolder(@NonNull AttendenceRecyclerAdapter.ViewHolder holder, int position) {
         holder.studentName.setText(list.get(position).getStudentName());
 //        holder.studentRollNo.setText(list.get(position).get);
-//        if(list.get(position).getStatus().equals("Present")){
-//            holder.present.setChecked(true);
-//        }else{
-//            holder.absent.setChecked(true);
-//        }
+        if(list.get(position).getStatus()!=null){
+            if(list.get(position).getStatus().equals("Present")){
+                holder.present.setChecked(true);
+            }else{
+                holder.absent.setChecked(true);
+            }
+        }
     }
 
     @Override
@@ -67,7 +70,8 @@ public class AttendenceRecyclerAdapter extends RecyclerView.Adapter<AttendenceRe
                     pa.setStudentId(list.get(pos).getStudentId());
                     pa.setStudentName(list.get(pos).getStudentName());
                     pa.setStatus("Absent");
-                    Attendence.list2.add(pa);
+//                    AttendenceFragment.list2.add(pa);
+                    AttendenceFragment.maps.put(list.get(pos).getStudentId(),pa);
                 }
             });
             present.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +82,9 @@ public class AttendenceRecyclerAdapter extends RecyclerView.Adapter<AttendenceRe
                     pa.setStudentId(list.get(pos).getStudentId());
                     pa.setStudentName(list.get(pos).getStudentName());
                     pa.setStatus("Present");
-                    Attendence.list2.add(pa);
+//                    AttendenceFragment.list2.add(pa);
+
+                    AttendenceFragment.maps.put(list.get(pos).getStudentId(),pa);
                 }
             });
 

@@ -1,29 +1,26 @@
 package com.techsam.attendencesystemuser.objects;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AttendenceObj {
     private String subName;
-    private String aId;
     private String subId;
     private String teacherName;
     private String teacherId;
     private String date;
-    private ArrayList<PresentAbsent> list;
+    private HashMap<String, PresentAbsent> list;
 
-    public AttendenceObj(){
 
-    }
-
-    public AttendenceObj(String subName, String aId, String subId, String teacherName, String teacherId, String date, ArrayList<PresentAbsent> list) {
+    public AttendenceObj(String subName, String subId, String teacherName, String teacherId, String date, HashMap<String, PresentAbsent> list) {
         this.subName = subName;
-        this.aId = aId;
         this.subId = subId;
         this.teacherName = teacherName;
         this.teacherId = teacherId;
         this.date = date;
         this.list = list;
     }
+    public AttendenceObj() {}
 
     public String getSubName() {
         return subName;
@@ -31,14 +28,6 @@ public class AttendenceObj {
 
     public void setSubName(String subName) {
         this.subName = subName;
-    }
-
-    public String getaId() {
-        return aId;
-    }
-
-    public void setaId(String aId) {
-        this.aId = aId;
     }
 
     public String getSubId() {
@@ -73,11 +62,11 @@ public class AttendenceObj {
         this.date = date;
     }
 
-    public ArrayList<PresentAbsent> getList() {
+    public HashMap<String, PresentAbsent> getList() {
         return list;
     }
 
-    public void setList(ArrayList<PresentAbsent> list) {
+    public void setList(HashMap<String, PresentAbsent> list) {
         this.list = list;
     }
 }

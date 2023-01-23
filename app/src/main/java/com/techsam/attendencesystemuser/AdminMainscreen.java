@@ -35,4 +35,8 @@ public class AdminMainscreen extends AppCompatActivity {
     public void opensubjects(View view) {
         startActivity(new Intent(AdminMainscreen.this, Subjects.class));
     }
+
+    public void openreports(View view) {
+
+    }
 }

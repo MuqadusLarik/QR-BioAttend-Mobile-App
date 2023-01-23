@@ -31,9 +31,7 @@ public class StudentMainscreen extends AppCompatActivity {
         setContentView(R.layout.activity_student_mainscreen);
         img = findViewById(R.id.generatedqr);
 
-
         welcome = findViewById(R.id.stuwelcome);
-
 
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
         db.child("Students").child(MainActivity.userKey).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -41,7 +39,6 @@ public class StudentMainscreen extends AppCompatActivity {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 Student student = task.getResult().getValue(Student.class);
                 welcome.setText("Welcome "+student.getName());
-
             }
 
         });
@@ -51,9 +48,7 @@ public class StudentMainscreen extends AppCompatActivity {
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
             Bitmap bitmap = barcodeEncoder.encodeBitmap(MainActivity.userKey, BarcodeFormat.QR_CODE, 400, 400);;
             img.setImageBitmap(bitmap);
-        } catch(Exception e) {
-
-        }
+        } catch(Exception e) {}
 
 
 

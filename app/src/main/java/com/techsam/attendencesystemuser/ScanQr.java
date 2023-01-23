@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class QrGenerate extends AppCompatActivity {
+public class ScanQr extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
