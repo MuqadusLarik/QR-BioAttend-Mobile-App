@@ -44,32 +44,34 @@ public class Attendence extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendence);
-        tabLayout = findViewById(R.id.tablayout);
+//        tabLayout = findViewById(R.id.tablayout);
         subjectName = getIntent().getStringExtra("Subject");
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                switch (tab.getPosition()){
-                    case 0:
-                        changeFragment(new AttendenceFragment());
-                        break;
-                    case 1:
-                        changeFragment(new Reports());
-                        break;
-                }
-            }
+        changeFragment(new AttendenceFragment());
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//                switch (tab.getPosition()){
+//                    case 0:
+//                        changeFragment(new AttendenceFragment());
+//                        break;
+//                    case 1:
+//                        changeFragment(new Reports());
+//                        break;
+//                }
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
 
     }
 

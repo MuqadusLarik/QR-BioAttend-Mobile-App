@@ -41,8 +41,10 @@ public class AttendenceRecyclerAdapter extends RecyclerView.Adapter<AttendenceRe
         if(list.get(position).getStatus()!=null){
             if(list.get(position).getStatus().equals("Present")){
                 holder.present.setChecked(true);
-            }else{
+            }else if(list.get(position).getStatus().equals("Absent")){
                 holder.absent.setChecked(true);
+            }else {
+                holder.leave.setChecked(true);
             }
         }
     }
@@ -54,13 +56,14 @@ public class AttendenceRecyclerAdapter extends RecyclerView.Adapter<AttendenceRe
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView studentName,studentRollNo;
-        RadioButton absent,present;
+        RadioButton absent,present,leave;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             studentName = itemView.findViewById(R.id.studentname);
             studentRollNo = itemView.findViewById(R.id.studentroll);
             absent = itemView.findViewById(R.id.radio_absent);
             present = itemView.findViewById(R.id.radio_present);
+            leave = itemView.findViewById(R.id.radio_leave);
 
             absent.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -74,18 +77,26 @@ public class AttendenceRecyclerAdapter extends RecyclerView.Adapter<AttendenceRe
                     AttendenceFragment.maps.put(list.get(pos).getStudentId(),pa);
                 }
             });
-            present.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int pos = getAdapterPosition();
-                    PresentAbsent pa = new PresentAbsent();
-                    pa.setStudentId(list.get(pos).getStudentId());
-                    pa.setStudentName(list.get(pos).getStudentName());
-                    pa.setStatus("Present");
+            present.setOnClickListener(view -> {
+                int pos = getAdapterPosition();
+                PresentAbsent pa = new PresentAbsent();
+                pa.setStudentId(list.get(pos).getStudentId());
+                pa.setStudentName(list.get(pos).getStudentName());
+                pa.setStatus("Present");
 //                    AttendenceFragment.list2.add(pa);
 
-                    AttendenceFragment.maps.put(list.get(pos).getStudentId(),pa);
-                }
+                AttendenceFragment.maps.put(list.get(pos).getStudentId(),pa);
+            });
+
+            leave.setOnClickListener(view -> {
+                int pos = getAdapterPosition();
+                PresentAbsent pa = new PresentAbsent();
+                pa.setStudentId(list.get(pos).getStudentId());
+                pa.setStudentName(list.get(pos).getStudentName());
+                pa.setStatus("Leave");
+//                    AttendenceFragment.list2.add(pa);
+
+                AttendenceFragment.maps.put(list.get(pos).getStudentId(),pa);
             });
 
 

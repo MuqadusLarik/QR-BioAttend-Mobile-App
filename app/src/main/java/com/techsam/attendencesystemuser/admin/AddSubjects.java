@@ -17,7 +17,7 @@ import com.techsam.attendencesystemuser.objects.Subject;
 
 public class AddSubjects extends AppCompatActivity {
 
-    EditText SubName,SubCode;
+    EditText SubName,SubCode,ch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +25,13 @@ public class AddSubjects extends AppCompatActivity {
         setContentView(R.layout.activity_add_subjects);
         SubName= findViewById(R.id.subname);
         SubCode= findViewById(R.id.subcode);
+        ch= findViewById(R.id.credithours);
     }
 
     public void submit(View view) {
         String subname=SubName.getText().toString();
         String subcode=SubCode.getText().toString();
+        String chh=ch.getText().toString();
 
         DatabaseReference db;
         db= FirebaseDatabase.getInstance().getReference();
@@ -38,6 +40,7 @@ public class AddSubjects extends AppCompatActivity {
         subject.setSubName(subname);
         subject.setSubCode(subcode);
         subject.setSubId(id);
+        subject.setCreditHours(chh);
 
 
         db.child("Subjects").child(id).setValue(subject).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -45,6 +48,7 @@ public class AddSubjects extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 SubName.setText("");
                 SubCode.setText("");
+                ch.setText("");
                 Toast.makeText(AddSubjects.this, "Subject added", Toast.LENGTH_SHORT).show();
             }
         });

@@ -22,6 +22,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="20dp"
+        android:visibility="invisible"
         android:background="@color/white"
         android:onClick="generateqrcode"
         android:src="@drawable/ic_baseline_qr_code_scanner_24"
@@ -43,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:onClick="submittofirebase"
+        android:visibility="invisible"
         android:padding="5dp"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent" />

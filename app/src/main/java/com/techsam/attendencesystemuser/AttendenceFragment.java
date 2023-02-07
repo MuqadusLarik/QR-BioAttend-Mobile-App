@@ -96,7 +96,7 @@ public class AttendenceFragment extends Fragment {
             db.child("Attendence").child(aObj.getDate()).child(aObj.getSubName()).setValue(aObj).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-                    Toast.makeText(getContext(), "Attendece Submitted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Attendence Submitted", Toast.LENGTH_SHORT).show();
                     maps.clear();
                 }
             });
@@ -137,7 +137,7 @@ public class AttendenceFragment extends Fragment {
                                     String key = entry.getKey();
                                     PresentAbsent value = entry.getValue();
                                     if (key.equals(student.getId())) {
-                                        pA.setStatus("Present");
+                                        pA.setStatus(value.getStatus());
                                     }
                                 }
 //                            Toast.makeText(getContext(), ""+listOfKeys.size(), Toast.LENGTH_SHORT).show();
@@ -160,6 +160,9 @@ public class AttendenceFragment extends Fragment {
     }
 
     private void updateLabel() {
+
+        qrScan.setVisibility(View.VISIBLE);
+        submit.setVisibility(View.VISIBLE);
         String myFormat = "dd-MM-yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(myFormat, Locale.ENGLISH);
         selectDate.setText(dateFormat.format(myCalendar.getTime()));

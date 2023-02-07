@@ -70,6 +70,15 @@
                 android:drawableBottom="@android:drawable/btn_radio"
                 android:gravity="center"
                 android:layout_weight="1"/>
+            <RadioButton
+                android:text="L"
+                android:button="@null"
+                android:layout_width="wrap_content"
+                android:id="@+id/radio_leave"
+                android:layout_height="wrap_content"
+                android:drawableBottom="@android:drawable/btn_radio"
+                android:gravity="center"
+                android:layout_weight="1"/>
         </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ public class Subject {
     private String subId;
     private String subName;
     private String subCode;
+    private String creditHours;
 
     public Subject(String subId, String subName, String subCode) {
         this.subId = subId;
@@ -13,6 +14,20 @@ public class Subject {
     public Subject() {
     }
 
+    public Subject(String subId, String subName, String subCode, String creditHours) {
+        this.subId = subId;
+        this.subName = subName;
+        this.subCode = subCode;
+        this.creditHours = creditHours;
+    }
+
+    public String getCreditHours() {
+        return creditHours;
+    }
+
+    public void setCreditHours(String creditHours) {
+        this.creditHours = creditHours;
+    }
 
     public String getSubId() {
         return subId;
