@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:strokeWidth="1dp"
+    android:layout_marginBottom="3dp"
+    app:strokeColor="@color/black"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee"
+            android:paddingStart="15dp"
+            android:layout_weight="1.1"
+            android:text="No."
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee"
+            android:paddingStart="15dp"
+            android:layout_weight="0.6"
+            android:text="Student Name"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <CheckBox
+            android:id="@+id/checkLeave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee"
+            android:layout_weight="1.1"
+            android:paddingStart="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/checkAbsent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee"
+            android:layout_weight="1.1"
+            android:paddingStart="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/checkPresent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee"
+            android:layout_weight="1.1"
+            android:paddingStart="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,78 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".admin.RegisterStudent">
-    <ScrollView
+    tools:context=".RegisterStudent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:navigationIcon="@drawable/back"
+            app:titleCentered="true"
+            app:titleTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/appbartitle"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/heavita"
+                android:gravity="center_vertical"
+                android:text="Student Registeration"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbarlayout"
+        app:layout_constraintVertical_bias="0.493">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:hint="Enter Student Name"
+            android:layout_marginBottom="10dp"
+            tools:ignore="HardcodedText">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/studentname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:inputType="text" />
 
-        <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:id="@+id/studentname"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Enter student name"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:id="@+id/studentbatch"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Enter Batch"
-        />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:id="@+id/roll"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Enter Roll no"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:id="@+id/studentusername"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Enter Username"
-        />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Roll Number"
+            android:layout_marginBottom="10dp"
+            tools:ignore="HardcodedText">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:id="@+id/studentpassword"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Enter Password"
-        />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/roll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:maxLength="5"
+                android:inputType="number" />
 
-        <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:id="@+id/addstudentsubjectrecycler"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:hint="Select Batch"
+            android:layout_marginBottom="10dp"
+            app:errorEnabled="true"
+            tools:ignore="HardcodedText">
 
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/studentbatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/montserrat"
+                android:inputType="none" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:onClick="submit"
-        android:text="Submit"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        </LinearLayout>
-    </ScrollView>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Username"
+            android:layout_marginBottom="10dp"
+            tools:ignore="HardcodedText">
 
-</LinearLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/studentusername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Password"
+            android:layout_marginBottom="10dp"
+            app:passwordToggleEnabled="true"
+            tools:ignore="HardcodedText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/studentpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/add"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/mycolor"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing=".3"
+            android:text="Add Student"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:onClick="submit"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/update"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/mycolor"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing=".3"
+            android:text="Update Student"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:onClick="update"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

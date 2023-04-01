@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:915108662769:android:53aac90866229079770850",
+        "mobilesdk_app_id": "1:915108662769:android:9c59afb9b17569c0770850",
         "android_client_info": {
-          "package_name": "com.techsam.attendencesystemuser"
+          "package_name": "com.rabailalibhatti.attendencesystemuser"
         }
       },
       "oauth_client": [

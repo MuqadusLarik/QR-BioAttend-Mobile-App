@@ -4,22 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Screens.Batches">
-    <androidx.recyclerview.widget.RecyclerView
+    tools:context=".Batches">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/batchrecycler"/>
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:navigationIcon="@drawable/back"
+            app:titleCentered="true"
+            app:titleTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/appbartitle"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/heavita"
+                android:gravity="center_vertical"
+                android:text="Batches"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/batchrecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbarlayout"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/data_batches"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:contentDescription="Add Batch"
+        android:onClick="addbatch"
+        android:src="@drawable/ic_baseline_school_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/white"
-        android:onClick="addbatch"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_baseline_school_24"
-        />
+        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

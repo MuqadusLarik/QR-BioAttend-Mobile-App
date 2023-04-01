@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".checkAttendenceStudent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:navigationIcon="@drawable/back"
+            app:titleCentered="true"
+            app:titleTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/appbartitle"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/heavita"
+                android:gravity="center_vertical"
+                android:text="Check Attendence"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/lineara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/appbarlayout">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/semName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_margin="5dp"
+            android:hint="Select Semester"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@id/showdate"
+            app:layout_constraintTop_toBottomOf="@id/appbarlayout"
+            tools:ignore="HardcodedText">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/semesterName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/montserrat"
+                android:inputType="none"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/subName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_margin="5dp"
+            android:hint="Select Subject"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@id/showdate"
+            app:layout_constraintTop_toBottomOf="@id/semName"
+            tools:ignore="HardcodedText">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/subjectName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/montserrat"
+                android:inputType="none"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbarlayout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:hint="Select Month"
+                app:errorEnabled="true"
+                tools:ignore="HardcodedText">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/monthSelect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/montserrat"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:hint="Select Year"
+                app:errorEnabled="true"
+                tools:ignore="HardcodedText">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/yearSelect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/montserrat"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/checkAttendence"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/mycolor"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing=".4"
+            android:text="CHECK ATTENDENCE"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineara">
+
+        <TextView
+            android:id="@+id/report"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mycolor"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:text="ATTENDENCE REPORT"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+
+            <TextView
+                android:id="@+id/yeartitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat"
+                    android:textAlignment="center"                android:padding="10dp"
+                android:text="Year"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/year"
+                    android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat"
+                    android:textAlignment="center"                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:id="@+id/monthtitle"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:text="Month"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/month"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:id="@+id/titleSubject"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:text="Subject"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subject"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/month"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:id="@+id/titleSemester"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:text="Semester"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/semester"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:id="@+id/attendencetitle"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:text="Attendence Taken (Days)"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/takenattendence"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/semester"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:id="@+id/titlename"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:text="Total Days Present"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/presentdays"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/takenattendence"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:id="@+id/titlehomework"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:text="Total Days Absent"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/absentdays"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/presentdays"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:id="@+id/titleLeave"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:text="Total Days Leaves"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/leavedays"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/absentdays"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <TextView
+            android:id="@+id/titlePercentage"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/mycolor"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:text="Total Percentage"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/percentage"
+                android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/mycolor"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+                android:textAlignment="center"            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

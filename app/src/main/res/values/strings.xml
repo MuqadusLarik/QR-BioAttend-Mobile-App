@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">Biometric Attendace</string>
+    <string name="app_name">Biometric Attendance</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rationale_camera">This app needs access to your camera so you can scan QR.</string>
+    <string name="returned_from_app_settings_to_activity">
+    Returned from app settings to MainActivity with the following permissions:
+    \n\nCamera: %s
+    </string>
 </resources>

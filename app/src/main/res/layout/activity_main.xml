@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,75 +7,136 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="LOGIN"
-        android:textStyle="bold"
-        android:id="@+id/loginview"
-        android:layout_marginTop="50dp"
-        android:textColor="@color/mycolor"
-        android:textSize="30dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        app:boxBackgroundMode="outline"
-        app:boxBackgroundColor="@color/white"
-        android:layout_marginTop="50dp"
-        android:layout_marginHorizontal="20dp"
-        android:hint="Enter username"
-        android:layout_height="wrap_content">
-         <com.google.android.material.textfield.TextInputEditText
-             android:id="@+id/editview1"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        app:boxBackgroundMode="outline"
-        app:boxBackgroundColor="@color/white"
-        android:layout_marginHorizontal="20dp"
-        app:endIconMode="password_toggle"
-
-        android:hint="Enter password"
-        android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editview2"
-            android:inputType="textPassword"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="300dp"
+            android:src="@drawable/login" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-
-        android:layout_marginHorizontal="40dp"
-        android:hint="Select account type"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_height="wrap_content"
-        android:padding="15dp">
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+        <TextView
+            android:id="@+id/title"
             android:layout_width="match_parent"
-            android:id="@+id/dropdownmenu"
-            android:inputType="none"
-            android:enabled="false"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/heavita"
+            android:gravity="center"
+            android:text="LOGIN"
+            android:textColor="@color/mycolor"
+            android:textSize="35sp" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="80dp"
-        android:id="@+id/login"
-        android:onClick="openlogin"
-        android:padding="15dp"
-        app:layout_constraintTop_toBottomOf="@id/editview2"
-        android:text="Login"/>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Enter Username"
+            app:boxStrokeColor="@color/mycolor"
+            app:boxStrokeErrorColor="@color/red"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:startIconDrawable="@drawable/person"
+            app:startIconTint="@color/mycolor">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black" />
 
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Enter Password"
+            app:boxStrokeColor="@color/mycolor"
+            app:boxStrokeErrorColor="@color/red"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/mycolor"
+            app:startIconDrawable="@drawable/ic_baseline_vpn_key_24"
+            app:startIconTint="@color/mycolor">
 
-</LinearLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:inputType="textPassword"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:hint="Select Account Type"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            app:errorEnabled="true"
+            app:startIconDrawable="@drawable/baseline_person_pin_24"
+            tools:ignore="HardcodedText"
+            app:startIconTint="@color/mycolor">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/dropdownmenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/montserrat"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/checkk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing=".1"
+            android:paddingStart="20dp"
+            android:text="Remember me"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/login"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="72dp"
+            android:backgroundTint="@color/mycolor"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing=".3"
+            android:onClick="openlogin"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

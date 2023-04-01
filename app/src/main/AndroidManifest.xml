@@ -3,18 +3,76 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ico"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ico"
         android:supportsRtl="true"
         android:theme="@style/Theme.AttendenceSystemUser"
         tools:targetApi="31">
+        <activity
+            android:name=".AttendenceReportModule"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAttendanceReportDetails"
+            android:exported="false" />
+        <activity
+            android:name=".SubjectAssignedStudentCheck"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAttendanceReport"
+            android:exported="false" />
+        <activity
+            android:name=".checkAttendenceStudent"
+            android:exported="false" />
+        <activity
+            android:name=".showQR"
+            android:exported="false" />
+        <activity
+            android:name=".qrScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CurrentSemester"
+            android:exported="false" />
+        <activity
+            android:name=".PromoteStudents"
+            android:exported="false" />
+        <activity
+            android:name=".SubjectAssignedCheck"
+            android:exported="false" />
+        <activity
+            android:name=".Attendence_Subjects"
+            android:exported="false" />
+        <activity
+            android:name=".attenDence_check"
+            android:exported="false" />
+        <activity
+            android:name=".attenDence_take"
+            android:exported="false" />
+        <activity
+            android:name=".TeacherProfile"
+            android:exported="false" />
+        <activity
+            android:name=".StudentProfile"
+            android:exported="false" />
+        <activity
+            android:name=".AssignedSubjects"
+            android:exported="false" />
+        <activity
+            android:name=".AssignSubjectsTeachers"
+            android:exported="false" />
+        <activity
+            android:name=".Semesters"
+            android:exported="false" />
+        <activity
+            android:name=".AddSemesters"
+            android:exported="false" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"
@@ -34,7 +92,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".admin.AddBatches"
+            android:name=".AddBatches"
             android:exported="false"
             android:label="ADD BATCH">
             <meta-data
@@ -42,7 +100,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".admin.AddSubjects"
+            android:name=".AddSubjects"
             android:exported="false"
             android:label="ADD SUBJECT">
             <meta-data
@@ -50,7 +108,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Screens.Subjects"
+            android:name=".Subjects"
             android:exported="false"
             android:label="SUBJECTS">
             <meta-data
@@ -58,7 +116,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Screens.Batches"
+            android:name=".Batches"
             android:exported="false"
             android:label="BATCHES">
             <meta-data
@@ -66,7 +124,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".admin.RegisterTeacher"
+            android:name=".RegisterTeacher"
             android:exported="false"
             android:label="ADD TEACHER">
             <meta-data
@@ -82,7 +140,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Screens.Students"
+            android:name=".Students"
             android:exported="false"
             android:label="STUDENTS">
             <meta-data
@@ -90,7 +148,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".admin.RegisterStudent"
+            android:name=".RegisterStudent"
             android:exported="false"
             android:label="REGISTER STUDENT">
             <meta-data
@@ -98,7 +156,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Screens.Teachers"
+            android:name=".Teachers"
             android:exported="false"
             android:label="Teachers">
             <meta-data

@@ -1,211 +1,481 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AdminMainscreen">
-    <ScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:titleCentered="true"
+                app:titleTextColor="@color/white">
+
+                <TextView
+                    android:id="@+id/appbartitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:fontFamily="@font/heavita"
+                    android:gravity="center"
+                    android:text="ADMIN DASHBOARD"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="150dp"
-            app:cardCornerRadius="10dp"
-            android:clickable="true"
-            android:onClick="openbatches"
-            android:focusable="true"
-            android:layout_marginStart="10dp"
-            app:cardBackgroundColor="@color/mycolor"
-            android:layout_height="150dp" >
-            <LinearLayout
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/batch"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:text="Batches"/>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="150dp"
-            app:cardCornerRadius="10dp"
-            android:clickable="true"
-            android:onClick="openstudentscreen"
-            android:focusable="true"
-            android:layout_marginStart="10dp"
-            app:cardBackgroundColor="@color/mycolor"
-            android:layout_height="150dp" >
-            <LinearLayout
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/students"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"                   android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:text="Students"/>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content">
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="150dp"
-            app:cardCornerRadius="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:onClick="opensubjects"
-            android:layout_marginStart="10dp"
-            app:cardBackgroundColor="@color/mycolor"
-            android:layout_height="150dp" >
-            <LinearLayout
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/subject"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:text="Subjects"/>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="150dp"
-            app:cardCornerRadius="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:onClick="openteachers"
-            android:layout_marginStart="10dp"
-            app:cardBackgroundColor="@color/mycolor"
-            android:layout_height="150dp" >
-            <LinearLayout
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/teachers"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:text="Teachers"/>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-    </LinearLayout>
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/appbarlayout">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
+                android:layout_height="220dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="150dp"
-                    app:cardCornerRadius="10dp"
+                    android:layout_width="0dp"
+                    android:onClick="openstudentscreen"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
                     android:clickable="true"
                     android:focusable="true"
-                    android:onClick="openreports"
-                    android:layout_marginStart="10dp"
-                    app:cardBackgroundColor="@color/mycolor"
-                    android:layout_height="150dp" >
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:rippleColor="@color/purple_500"
+                    app:strokeColor="@color/purple_200"
+                    app:strokeWidth="1dp">
+
                     <LinearLayout
-                        android:gravity="center"
                         android:layout_width="match_parent"
-                        android:orientation="vertical"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/teachers"/>
+
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/student" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:text="Reports"/>
+                            android:layout_margin="10dp"
+                            android:fontFamily="@font/antic"
+                            android:text="Student Module"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
                     </LinearLayout>
+
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="150dp"
-                    app:cardCornerRadius="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="8dp"
+                    android:onClick="openteachers"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
                     android:clickable="true"
-                    android:visibility="invisible"
                     android:focusable="true"
-                    android:layout_marginStart="10dp"
-                    app:cardBackgroundColor="@color/mycolor"
-                    android:layout_height="150dp" >
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:rippleColor="@color/purple_500"
+                    app:strokeColor="@color/purple_200"
+                    app:strokeWidth="1dp">
+
                     <LinearLayout
-                        android:gravity="center"
                         android:layout_width="match_parent"
-                        android:orientation="vertical"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/teachers"/>
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/teachers" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:text="Reports"/>
+                            android:layout_margin="10dp"
+                            android:fontFamily="@font/antic"
+                            android:text="Teacher Module"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
                     </LinearLayout>
+
                 </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:onClick="openbatches"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:rippleColor="@color/purple_500"
+                    app:strokeColor="@color/purple_200"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/batches" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="@font/antic"
+                            android:text="BATCH Module"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="8dp"
+                    android:onClick="opensubjects"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:rippleColor="@color/purple_500"
+                    app:strokeColor="@color/purple_200"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/subjects" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="@font/antic"
+                            android:text="SUBJECTS Module"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:onClick="opensemesters"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:rippleColor="@color/purple_500"
+                    app:strokeColor="@color/purple_200"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/semesters" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="@font/antic"
+                            android:text="SEMESTERS Module"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:onClick="assignSubjects"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:rippleColor="@color/purple_500"
+                    app:strokeColor="@color/purple_200"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/assignsubjects" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/antic"
+                            android:text="Assign Subjects to Teacher"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:onClick="attendenceModule"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:rippleColor="@color/purple_500"
+                    app:strokeColor="@color/purple_200"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/attendencereport" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="@font/antic"
+                            android:text="Attendence Report Module"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:onClick="promoteStudents"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:rippleColor="@color/purple_500"
+                    app:strokeColor="@color/purple_200"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/promotion" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="@font/antic"
+                            android:text="Promote Students"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:onClick="logout"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:rippleColor="@color/purple_500"
+                app:strokeColor="@color/mycolor"
+                app:strokeWidth="1dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/heavita"
+                    android:textAlignment="center"
+                    android:text="LOG OUT"
+                    android:textAllCaps="true"
+                    android:textColor="@color/mycolor"
+                    android:textSize="16sp" />
+
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-</LinearLayout>
+</ScrollView>

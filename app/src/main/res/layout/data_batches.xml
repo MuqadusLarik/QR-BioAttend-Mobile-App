@@ -1,0 +1,134 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+    app:strokeColor="@color/black"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/img_std_design"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/batch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/img_std_design"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/titleTeacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:fontFamily="@font/montserrat"
+                android:paddingStart="10dp"
+                android:text="Batch Title : "
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/teacherName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/titleTeacher"
+                android:ems="8"
+                android:fontFamily="@font/montserrat"
+                android:paddingStart="10dp"
+                android:text=""
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/titleNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleTeacher"
+                android:ems="8"
+                android:fontFamily="@font/montserrat"
+                android:paddingStart="10dp"
+                android:text="Start Year : "
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/teacherNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/teacherName"
+                android:layout_toRightOf="@id/titleNumber"
+                android:ems="8"
+                android:fontFamily="@font/montserrat"
+                android:paddingStart="10dp"
+                android:text=""
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/titleCredit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleNumber"
+                android:ems="8"
+                android:fontFamily="@font/montserrat"
+                android:paddingStart="10dp"
+                android:text="End Year : "
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/subCreditHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/teacherNumber"
+                android:layout_toRightOf="@id/titleCredit"
+                android:ems="8"
+                android:fontFamily="@font/montserrat"
+                android:paddingStart="10dp"
+                android:text=""
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/titleStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleCredit"
+                android:ems="8"
+                android:fontFamily="@font/montserrat"
+                android:paddingStart="10dp"
+                android:text="Status : "
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subCreditHours"
+                android:layout_toRightOf="@id/titleStatus"
+                android:ems="8"
+                android:fontFamily="@font/montserrat"
+                android:paddingStart="10dp"
+                android:text=""
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
