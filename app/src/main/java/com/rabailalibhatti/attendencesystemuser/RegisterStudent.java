@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -44,6 +45,7 @@ public class RegisterStudent extends AppCompatActivity {
 
     private String studentKey;
     private studentModel model;
+    TextView appbartitle;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,15 +71,17 @@ public class RegisterStudent extends AppCompatActivity {
         batch = findViewById(R.id.studentbatch);
         add = findViewById(R.id.add);
         update = findViewById(R.id.update);
-
+        appbartitle = findViewById(R.id.appbartitle);
 
         if (getIntent().hasExtra("KEY")){
             studentKey = getIntent().getStringExtra("KEY");
             update.setVisibility(View.VISIBLE);
             fillData(studentKey);
+            appbartitle.setText("Update Student");
         }
         else{
             add.setVisibility(View.VISIBLE);
+            appbartitle.setText("Student Registration");
         }
 
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
@@ -161,7 +165,7 @@ public class RegisterStudent extends AppCompatActivity {
                                 semesterFirst = model.getSemKey();
                                 Log.d("dubai", "name: "+model.getSemTitle());
                                 Log.d("dubai", "key: "+model.getSemKey());
-                                Toast.makeText(RegisterStudent.this, ""+semesterFirst, Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(RegisterStudent.this, ""+semesterFirst, Toast.LENGTH_SHORT).show();
                                 break;
                             }
                             else{

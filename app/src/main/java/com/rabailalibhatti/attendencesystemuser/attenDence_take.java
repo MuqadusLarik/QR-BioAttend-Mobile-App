@@ -113,6 +113,7 @@ public class attenDence_take extends AppCompatActivity implements AttendenceList
                 uploadToFirebase(dateOfAttendence, AttendenceMap);
             } else {
                 Toast.makeText(this, "Please Mark All Students", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, ""+AttendenceMap.size(), Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -106,6 +106,7 @@
             android:layout_height="wrap_content"
             android:hint="Enter Password"
             android:layout_marginBottom="10dp"
+            app:passwordToggleEnabled="true"
             tools:ignore="HardcodedText">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -114,7 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:inputType="text" />
+                android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,9 +128,25 @@
             android:fontFamily="@font/montserrat"
             android:letterSpacing=".3"
             android:text="Add Teacher"
+            android:visibility="gone"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:onClick="submit"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/update"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/mycolor"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing=".3"
+            android:text="Update Teacher"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:onClick="update"
             android:textStyle="bold" />
 
     </LinearLayout>

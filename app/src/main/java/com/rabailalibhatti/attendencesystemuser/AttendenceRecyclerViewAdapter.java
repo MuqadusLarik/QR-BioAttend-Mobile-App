@@ -42,24 +42,29 @@ public class AttendenceRecyclerViewAdapter extends RecyclerView.Adapter<Attenden
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.number.setText(""+(position+1));
         holder.studentname.setText(studentModels.get(position).getName());
+
         String key = studentModels.get(holder.getAbsoluteAdapterPosition()).getKey();
         if (hashMap.containsKey(key)) {
             String status = hashMap.get(key);
             switch (status) {
                 case "present":
                     holder.present.setChecked(true);
+                    attendenceListener.onAttendenceChange(hashMap);
                     break;
                 case "absent":
                     holder.absent.setChecked(true);
+                    attendenceListener.onAttendenceChange(hashMap);
                     break;
                 case "leave":
                     holder.leave.setChecked(true);
+                    attendenceListener.onAttendenceChange(hashMap);
                     break;
             }
         } else {
             holder.present.setChecked(false);
             holder.absent.setChecked(false);
             holder.leave.setChecked(false);
+            attendenceListener.onAttendenceChange(hashMap);
         }
         
         if (studentModels != null && studentModels.size() > 0){

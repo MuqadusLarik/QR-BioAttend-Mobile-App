@@ -102,6 +102,7 @@ public class PromoteStudents extends AppCompatActivity {
                 } else {
                     passoutStudents.setVisibility(View.GONE);
                 }
+                Toast.makeText(PromoteStudents.this, ""+semesterToPromoteModel.getSemNumber(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -110,16 +111,14 @@ public class PromoteStudents extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 semesterToPromoteToKey = semesterToPromoteToKeysList.get(i);
                 semesterToPromoteToModel = semesterToPromoteToList.get(i);
-
+                Toast.makeText(PromoteStudents.this, ""+semesterToPromoteToModel.getSemNumber(), Toast.LENGTH_SHORT).show();
             }
         });
 
         promoteStudents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (semesterToPromoteModel.getSemNumber() != 8) {
-                    Toast.makeText(PromoteStudents.this, "Semester " + semesterToPromoteModel.getSemNumber() + " students can not be promoted to " + semesterToPromoteToModel.getSemNumber(), Toast.LENGTH_SHORT).show();
-                } else {
+                if ((semesterToPromoteModel.getSemNumber() +1) == semesterToPromoteToModel.getSemNumber()) {
                     new AlertDialog.Builder(PromoteStudents.this)
                             .setTitle("Confirmation")
                             .setMessage("Do you want to promote these students")
@@ -137,6 +136,8 @@ public class PromoteStudents extends AppCompatActivity {
                                 }
                             })
                             .show();
+                } else {
+                    Toast.makeText(PromoteStudents.this, "Semester " + semesterToPromoteModel.getSemNumber() + " students can not be promoted to " + semesterToPromoteToModel.getSemNumber(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -144,25 +145,29 @@ public class PromoteStudents extends AppCompatActivity {
         passoutStudents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(PromoteStudents.this)
-                        .setTitle("Confirmation")
-                        .setMessage("Do you want to passout these students")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                passoutStudentss(studentModels);
-                                if (!batchKey.isEmpty()){
-                                    passOutBatch(batchKey);
+                if (semesterToPromoteModel.getSemNumber() != 8) {
+                    Toast.makeText(PromoteStudents.this, "Semester " + semesterToPromoteModel.getSemNumber() + " students can not be promoted to " + semesterToPromoteToModel.getSemNumber(), Toast.LENGTH_SHORT).show();
+                } else {
+                    new AlertDialog.Builder(PromoteStudents.this)
+                            .setTitle("Confirmation")
+                            .setMessage("Do you want to passout these students")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    passoutStudentss(studentModels);
+                                    if (!batchKey.isEmpty()) {
+                                        passOutBatch(batchKey);
+                                    }
                                 }
-                            }
-                        })
-                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                finish();
-                            }
-                        })
-                        .show();
+                            })
+                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    finish();
+                                }
+                            })
+                            .show();
+                }
             }
         });
     }

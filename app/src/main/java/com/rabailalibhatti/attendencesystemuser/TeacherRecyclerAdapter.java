@@ -1,5 +1,6 @@
 package com.rabailalibhatti.attendencesystemuser;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,14 @@ public class TeacherRecyclerAdapter extends RecyclerView.Adapter<TeacherRecycler
             tName = itemView.findViewById(R.id.teacherName);
             tNumber = itemView.findViewById(R.id.teacherNumber);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(itemView.getContext(), RegisterTeacher.class);
+                    intent.putExtra("KEY", arrayList.get(getAbsoluteAdapterPosition()).getKey());
+                    itemView.getContext().startActivity(intent);
+                }
+            });
 
         }
     }
